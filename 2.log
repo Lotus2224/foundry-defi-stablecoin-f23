@@ -1,0 +1,35 @@
+lotus@LAPTOP-OUEDH2IN:foundry-defi-stablecoin-f23$ forge test --mt invariant_protocolMustHaveMoreValueThanTotalSupply -vv
+[⠊] Compiling...
+No files changed, compilation skipped
+
+Ran 1 test for test/fuzz/InvariantsTest.t.sol:InvariantsTest
+[FAIL: custom error 0xe580cc61: 0000000000000000000000000000000000000000000000000874075276c183d4]
+        [Sequence]
+                sender=0x0000000000000000000000000000000000001371 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[3, 347282310542770081956796519759042620745734813609144800262368 [3.472e59]]
+                sender=0x0000000000000000000000000000000000000E66 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mintDsc(uint256,uint256) args=[2942619712030205974776544161030815201659164808180083914484301459416003050769 [2.942e75], 94987 [9.498e4]]
+                sender=0x0000000000000000000000000000000000001371 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=redeemCollateral(uint256,uint256) args=[9310259 [9.31e6], 2543779865211828775567664419000182 [2.543e33]]
+ invariant_protocolMustHaveMoreValueThanTotalSupply() (runs: 11, calls: 110, reverts: 1)
+Logs:
+  Bound result 78411520563957788872366023368
+  Bound result 3832162113074301187897568691623497
+  Bound result 31726596474146759238254886453
+  weth value:    0
+  wbtc value:    7841152056395778887236602336800000
+  total supply:  3832162113074301187897568691623497
+  timeMintIsCalled:  1
+
+Suite result: FAILED. 0 passed; 1 failed; 0 skipped; finished in 76.23ms (73.01ms CPU time)
+
+Ran 1 test suite in 77.11ms (76.23ms CPU time): 0 tests passed, 1 failed, 0 skipped (1 total tests)
+
+Failing tests:
+Encountered 1 failing test in test/fuzz/InvariantsTest.t.sol:InvariantsTest
+[FAIL: custom error 0xe580cc61: 0000000000000000000000000000000000000000000000000874075276c183d4]
+        [Sequence]
+                sender=0x0000000000000000000000000000000000001371 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=depositCollateral(uint256,uint256) args=[3, 347282310542770081956796519759042620745734813609144800262368 [3.472e59]]
+                sender=0x0000000000000000000000000000000000000E66 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=mintDsc(uint256,uint256) args=[2942619712030205974776544161030815201659164808180083914484301459416003050769 [2.942e75], 94987 [9.498e4]]
+                sender=0x0000000000000000000000000000000000001371 addr=[test/fuzz/Handler.t.sol:Handler]0x2e234DAe75C793f67A35089C9d99245E1C58470b calldata=redeemCollateral(uint256,uint256) args=[9310259 [9.31e6], 2543779865211828775567664419000182 [2.543e33]]
+ invariant_protocolMustHaveMoreValueThanTotalSupply() (runs: 11, calls: 110, reverts: 1)
+
+Encountered a total of 1 failing tests, 0 tests succeeded
+lotus@LAPTOP-OUEDH2IN:foundry-defi-stablecoin-f23$ 
